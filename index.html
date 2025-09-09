@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator-style.css">
+</head>
+
+<body>
+    <div id="calculator">
+        <div id="displayWrapper">
+            <select id="themeSelect">
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+    <option value="red">Red</option>
+    <option value="purple">Purple</option>
+    <option value="orange">Orange</option>
+    <option value="pink">Pink</option>
+    <option value="brown">Brown</option>
+    <option value="yellow">Yellow</option>
+    <option value="grey">Grey</option>
+</select>
+
+            <div id="evaluateArea">
+	    
+            </div>
+
+
+        </div>
+        <div id="special-operator">
+            <button id="history" class="extra-operator">history</button>
+            <button id="MRC" class="extra-operator">MRC</button>
+            <button class="extra-operator">M+</button>
+            <button class="extra-operator">M-</button>
+             <button class="extra-operator">.</button>
+            <button class="extra-operator">√</button>
+            <button class="extra-operator">GT</button>
+
+            <button class="extra-operator">⌫</button>
+        </div>
+        <div id="buttons">
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="number">0</button>
+            <button class="number">00</button>
+            <button class="number">000</button>
+        </div>
+        <div id="operators">
+            <button class="operator">Ac</button>
+            <button class="operator">C</button>
+            <button class="operator">+</button>
+            <button class="operator">-</button>
+            <button class="operator">*</button>
+            <button class="operator">/</button>
+            <button class="operator">%</button>
+            <button class="operator">=</button>
+
+        </div>
+    </div>
+    <div id="history-box">
+        <button id="closebtn" onclick="closeHistory()">Close</button>
+        <div id="history-list"></div>
+    </div>
+    
+   <script src="calculator.js"></script>
+</body>
+
+</html>

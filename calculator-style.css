@@ -1,0 +1,296 @@
+        body {
+            display: flex;
+            background: transparent;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+
+        }
+
+        #calculator {
+            height: 100%;
+            width: 80%;
+            max-width: 100%;
+            max-height: 100%;
+            background-image: linear-gradient(blue, black);
+            padding: 5px;
+            display: grid;
+            grid-template-columns: 2fr 3fr 2fr;
+            margin-top: 5px;
+            align-self: center;
+            transition: flex 0.3s ease;
+        }
+
+        #evaluateArea {
+            grid-column: span 6;
+            background-color: blue;
+            height: 50px;
+            padding: 5px;
+            margin: 10px;
+            color: white;
+            font-weight: bolder;
+            font-size: 50px;
+            display: flex;
+            align-items: flex-end;
+
+
+        }
+
+        .number {
+            font-size: 30px;
+            background-color: rgb(3, 27, 107);
+            color: white;
+            border: 2px solid black;
+            border-radius: 15px;
+            box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+            min-width: 60px;
+            min-height: 60px;
+        }
+
+        .operator {
+            font-size: larger;
+            background-color: orange;
+            color: black;
+            border: 2px solid black;
+            border-radius: 15px;
+            font-weight: bolder;
+            cursor: pointer;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), inset 0px 0px 5px rgba(255, 255, 255, 0.2);
+        }
+
+        .extra-operator {
+            font-size: larger;
+            background-color: orange;
+            color: black;
+            border: 2px solid black;
+            border-radius: 15px;
+            font-weight: bolder;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), inset 0px 0px 5px rgba(255, 255, 255, 0.2);
+
+
+        }
+
+        #special-operator {
+            display: grid;
+            grid-column: 1;
+            grid-template-columns: repeat(2, 1fr);
+            margin-left: 10px;
+            margin-top: 10px;
+            gap: 5px;
+            font-size: larger;
+
+        }
+
+        #buttons {
+            display: grid;
+            grid-column: 2;
+            grid-template-columns: repeat(3, 1fr);
+            margin: 5px;
+            border-radius: 2px;
+            gap: 2px;
+
+        }
+
+        #operators {
+            display: grid;
+            grid-column: 3;
+            grid-template-columns: repeat(2, 1fr);
+            margin-right: 10px;
+            margin-top: 10px;
+            gap: 5px;
+            font-size: larger;
+
+        }
+
+        #displayWrapper {
+            grid-column: span 7;
+            margin-top: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #history {
+            width: 20vh;
+            height: 15vh;
+            font-size: 18px;
+            white-space: nowrap;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            word-break: break-word;
+            white-space: normal;
+        }
+
+        #MRC {
+            width: 20vh;
+            height: 15vh;
+            font-size: 18px;
+            white-space: nowrap;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #history-box {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80%;
+            background: #1a1a40;
+            color: white;
+            font-size: clamp(14px, 4vw, 20px);
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            flex-direction: column;
+            transform: translateY(100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 1s ease;
+        }
+
+        #history-box.show {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #closebtn {
+            margin: 10px;
+            align-self: flex-end;
+            background-color: green;
+            color: yellow;
+        }
+
+        .number:hover,
+        .operator:hover,
+        .extra-operator:hover {
+            cursor: pointer;
+            filter: brightness(2);
+            background: blue;
+            color: black;
+        }
+
+        @media only screen and (max-width:580px) {
+            #evaluateArea {
+                font-size: 30px;
+            }
+
+            .number {
+                font-size: 20px;
+            }
+        }
+
+        #changeTheme {
+            align-self: flex-start;
+            background-color: green;
+        }
+
+        #themeSelect {
+            margin-bottom: 5px;
+            background: #1a1a40;
+            color: #ffffff;
+            border: 1px solid #ccc;
+            padding: 4px 6px;
+            border-radius: 5px;
+            align-self: flex-end;
+        }
+
+
+        @media (min-width:320px) {
+            #calculator {
+                height: 100vh;
+                width: 100vw;
+                max-height: 100%;
+                max-width: 100%;
+                grid-template-columns: 2fr 3fr 2fr;
+                gap: 0.5vh;
+                border-radius: 0;
+                overflow: hidden;
+                max-width: 100%;
+                max-height: 100%;
+                padding: 2px;
+                box-sizing: border-box;
+            }
+
+            #displayWrapper {
+                grid-column: span 7;
+                margin: 0;
+                padding: 5px;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+                /* ✅ overflow fix */
+                width: 100%;
+                /* ✅ screen width me fit */
+            }
+
+
+            #evaluateArea {
+                font-size: clamp(20px, 8vw, 50px);
+                /* min 20px, responsive 8vw, max 50px */
+                height: 14vh;
+                margin: 5px;
+            }
+
+            /* ✅ Sabhi buttons ek size mein */
+            .number,
+            .operator,
+            .extra-operator,
+            #history,
+            #MRC,
+            #GT,
+            #Mplus,
+            #Mminus,
+            #closebtn {
+                height: 15vh;
+                width: 100%;
+                font-size: clamp(14px, 4vw, 25px);
+                min-width: 40px;
+                min-height: 40px;
+            }
+
+            /* Grid layouts mobile ke liye */
+            #special-operator {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5vh;
+            }
+
+            #buttons {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5vh;
+            }
+
+            #operators {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5vh;
+            }
+
+            /* ✅ History box slide up responsive */
+            #history-box {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 80%;
+                background: #1a1a40;
+                color: white;
+                font-size: clamp(14px, 4vw, 20px);
+                border-radius: 10px 10px 0 0;
+                display: flex;
+                flex-direction: column;
+                transform: translateY(100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: transform 1s ease;
+            }
+
+            #history-box.show {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+        }
